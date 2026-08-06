@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="바이브 코딩으로 제작된 세련된 글래스모피즘 스마트 계산기 애플리케이션">
+    <title>Vibe Glass Calculator | 세련된 글래스모피즘 스마트 계산기</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-glow">
+        <div class="glow-circle sphere-1"></div>
+        <div class="glow-circle sphere-2"></div>
+        <div class="glow-circle sphere-3"></div>
+    </div>
+
+    <main class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo">
+                <span class="badge">Vibe Coding</span>
+                <h1>Glass Calculator</h1>
+            </div>
+            <button id="history-toggle-btn" class="icon-btn" title="계산 기록 보기" aria-label="계산 기록 보기">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+            </button>
+        </header>
+
+        <!-- Calculator Container -->
+        <div class="calculator-wrapper">
+            <div class="calculator">
+                <!-- Display Section -->
+                <section class="display-section">
+                    <div id="expression-display" class="expression-display" aria-label="이전 수식"></div>
+                    <div id="current-display" class="current-display" aria-label="현재 결과">0</div>
+                </section>
+
+                <!-- Keypad Section -->
+                <section class="keypad-section">
+                    <div class="keypad-grid">
+                        <!-- Row 1: Function Controls -->
+                        <button type="button" class="btn btn-func" data-action="clear-all">AC</button>
+                        <button type="button" class="btn btn-func" data-action="delete">⌫</button>
+                        <button type="button" class="btn btn-func" data-action="percent">%</button>
+                        <button type="button" class="btn btn-operator" data-action="operator" data-value="/">÷</button>
+
+                        <!-- Row 2: Science & Row 1 Numbers -->
+                        <button type="button" class="btn btn-secondary" data-action="sqrt">√</button>
+                        <button type="button" class="btn btn-number" data-value="7">7</button>
+                        <button type="button" class="btn btn-number" data-value="8">8</button>
+                        <button type="button" class="btn btn-number" data-value="9">9</button>
+                        <button type="button" class="btn btn-operator" data-action="operator" data-value="*">×</button>
+
+                        <!-- Row 3 -->
+                        <button type="button" class="btn btn-secondary" data-action="square">x²</button>
+                        <button type="button" class="btn btn-number" data-value="4">4</button>
+                        <button type="button" class="btn btn-number" data-value="5">5</button>
+                        <button type="button" class="btn btn-number" data-value="6">6</button>
+                        <button type="button" class="btn btn-operator" data-action="operator" data-value="-">−</button>
+
+                        <!-- Row 4 -->
+                        <button type="button" class="btn btn-secondary" data-action="toggle-sign">±</button>
+                        <button type="button" class="btn btn-number" data-value="1">1</button>
+                        <button type="button" class="btn btn-number" data-value="2">2</button>
+                        <button type="button" class="btn btn-number" data-value="3">3</button>
+                        <button type="button" class="btn btn-operator" data-action="operator" data-value="+">+</button>
+
+                        <!-- Row 5 -->
+                        <button type="button" class="btn btn-number btn-wide" data-value="0">0</button>
+                        <button type="button" class="btn btn-number" data-value=".">.</button>
+                        <button type="button" class="btn btn-equal" data-action="calculate">=</button>
+                    </div>
+                </section>
+            </div>
+
+            <!-- History Side Panel -->
+            <aside id="history-panel" class="history-panel hidden">
+                <div class="history-header">
+                    <h3>계산 기록</h3>
+                    <button id="clear-history-btn" class="text-btn">기록 삭제</button>
+                </div>
+                <ul id="history-list" class="history-list">
+                    <li class="empty-msg">기록이 없습니다.</li>
+                </ul>
+            </aside>
+        </div>
+
+        <!-- Footer / Vibe Banner -->
+        <footer class="app-footer">
+            <p>⚡ Built with <strong>Vibe Coding</strong> & AI Assistant</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
